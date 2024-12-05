@@ -13,6 +13,20 @@ For examples, in our case we use Pléaides images (From Airbus DS) on 50cm resol
 ![Label](./Fig/Label.png)
 ![Image](./Fig/Image.png)
 
+<div style="display: flex; justify-content: center; align-items: center;">
+
+  <figure style="margin: 10px;">
+    <img src="./Fig/Label.png" alt="Image 1" width="300">
+    <figcaption>Figure 1: Description of the first image.</figcaption>
+  </figure>
+
+  <figure style="margin: 10px;">
+    <img src="./Fig/Image.png" alt="Image 2" width="300">
+    <figcaption>Figure 2: Description of the second image.</figcaption>
+  </figure>
+
+</div>
+
 
 Step 1 : Patch extraction 
 
