@@ -4,7 +4,7 @@ This repository provides a simple and reliable tool to perform land cover classi
 
 The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure []).
 
-![Description de l'image](./Fig/Label.png)
+![Label](./Fig/Label.png)
 
 Step 1 : Patch extraction 
 
@@ -99,6 +99,7 @@ def extract_patches(image_path, label_path, shapefile_path, output_dir, train_ra
                     save_patch_and_label(patch_img, patch_lbl, transform, test_img_dir, test_lbl_dir, patch_filename)
 
 print("Patch extraction complete!")
+
 
 ## Step 2: Image pre-processing
 
