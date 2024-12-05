@@ -4,6 +4,12 @@ This repository provides a simple and reliable tool to perform land cover classi
 
 The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure []).
 
+IMPORTANT : In our cas we use a Pléiades images (50cm resolution pixel) et for the label we use OCS GE (freely avaible here: https://geoservices.ign.fr/ocsge). This repo aims to propose a modulable approach for differente data (different resolution and labels/Classes). You can use RGB Image or Multi-spectral imagery, you can also choose how much classes you want to predict. For the moment we propose only one U-Net architecture who ask a 224x224xn_channels and labels in 224x224x1 (in bytes, Int8) format as input. 
+
+Before start, you need to have a satellite image in tif format, a label image in the same position than your satellite image (same projection), you also need to have a grid to extract your patchs. You can directly create your own grid from the Qgis tools : "Create Grids", you need to have a grids who fit (at least closesly) to make 224x224 pixels patchs.
+For examples, in our case we use Pléaides images (From Airbus DS) on 50cm resolution format so to make a 224x224 grids patchs we have to founs how much meters we need to put to have a 224 pixels in longueur and largeur so :  224/2 = 112 , so we need to create a grid with 112 meter in longueur and largeur to have a 224x224 patches. 
+
+
 ![Label](./Fig/Label.png)
 
 Step 1 : Patch extraction 
