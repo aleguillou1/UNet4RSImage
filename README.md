@@ -2,7 +2,7 @@
 
 This repository provides a simple and reliable tool to perform land cover classification using a U-Net model. A tutorial is provided here, but the notebook is flexible and can be adapted to your own datasets, satellite images, and labels. The only requirements are a Python environment capable of running Jupyter notebooks and QGIS.
 
-The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure []).
+The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure 1 & 2)
 
 IMPORTANT: In this tutorial, we use Pléiades satellite imagery (with a 50 cm per pixel resolution) and OCS GE labels (freely available here). This repository offers a modular approach that can be adapted to different datasets, resolutions, and label classes. Whether you are working with RGB images or multi-spectral imagery, this workflow allows you to customize the number of classes to predict.
 
