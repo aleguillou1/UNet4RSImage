@@ -110,8 +110,7 @@ def extract_patches(image_path, label_path, shapefile_path, output_dir, train_ra
 
 print("Patch extraction complete!")
 
----
-
+```
 
 ### Step 2: Image pre-processing
 
