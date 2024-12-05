@@ -56,14 +56,7 @@ Below is the Python function to perform patch extraction. It:
 
 ```python
 def extract_patches(image_path, label_path, shapefile_path, output_dir, train_ratio=0.75, val_ratio=0.2, test_ratio=0.05):
-    import os
-    import rasterio
-    import geopandas as gpd
-    import random
-    import numpy as np
-    import cv2
-    from rasterio.mask import mask
-    
+
     # Open the image and label files
     with rasterio.open(image_path) as src_img:
         with rasterio.open(label_path) as src_lbl:
