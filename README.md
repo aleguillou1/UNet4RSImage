@@ -11,6 +11,8 @@ For examples, in our case we use Pléaides images (From Airbus DS) on 50cm resol
 
 
 ![Label](./Fig/Label.png)
+![Image](./Fig/Image.png)
+
 
 Step 1 : Patch extraction 
 
