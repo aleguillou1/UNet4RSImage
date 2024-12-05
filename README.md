@@ -115,3 +115,73 @@ print("Patch extraction complete!")
 ### Step 2: Image pre-processing
 
 This cells aims to prepare the dataset for the training of the model. The cells will read your dataset, normalize them, transform them as tensor, you can also visualise a dataset to check if you patch and labels are the same for the training.
+```python
+
+# Normalization
+def normalize_img(img):
+    return img / np.max(img)
+
+# Function to read .tif files and convert them into tensors
+def load_data(image_dir, mask_dir):
+    images = []
+    masks = []
+    for img_file in os.listdir(image_dir):
+        if img_file.endswith('.tif') or img_file.endswith('.tiff'):
+            img_path = os.path.join(image_dir, img_file)
+            mask_path = os.path.join(mask_dir, img_file)
+            
+            # Read images and masks
+            img = tiff.imread(img_path).astype(np.float32)
+            mask = tiff.imread(mask_path).astype(np.uint8)
+            
+            img = normalize_img(img)
+            
+            images.append(img)
+            masks.append(mask)
+    
+    # Convert the lists into numpy arrays
+    images = np.array(images)
+    masks = np.array(masks)
+    
+    # Convert numpy arrays into tensors
+    images = tf.convert_to_tensor(images, dtype=tf.float32)
+    masks = tf.convert_to_tensor(masks, dtype=tf.uint8)
+    
+    return images, masks
+
+train_image_dir = '/Patch/train/images'
+train_mask_dir = '/Patch/train/labels'
+val_image_dir = '/Patch/validation/images/'
+val_mask_dir = '/Patch/validation/labels'
+
+
+# Load and transform the training data
+train_images, train_masks = load_data(train_image_dir, train_mask_dir)
+val_images, val_masks = load_data(val_image_dir, val_mask_dir)
+
+print(f'Shape of training images: {train_images.shape}')
+print(f'Shape of training labels: {train_masks.shape}')
+
+# Check the pixel values of the images
+print(f'Minimum and maximum values of the training images: {tf.reduce_min(train_images).numpy()}, {tf.reduce_max(train_images).numpy()}')
+print(f'Minimum and maximum values of the training labels: {tf.reduce_min(train_masks).numpy()}, {tf.reduce_max(train_masks).numpy()}')
+
+print(f'Minimum and maximum values of the validation images: {tf.reduce_min(val_images).numpy()}, {tf.reduce_max(val_images).numpy()}')
+print(f'Minimum and maximum values of the validation labels: {tf.reduce_min(val_masks).numpy()}, {tf.reduce_max(val_masks).numpy()}')
+
+# Display an RGB image and its corresponding mask
+idx = 17  # You can change this index to visualize other images
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 2, 1)
+plt.imshow(train_images[idx][:, :, :3])  
+plt.title('Image d\'entraînement (RGB)')
+
+plt.subplot(1, 2, 2)
+plt.imshow(train_masks[idx], cmap='gray') 
+plt.title('Masque d\'entraînement')
+
+plt.show()
+
+```
+
