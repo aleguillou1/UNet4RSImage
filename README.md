@@ -9,10 +9,6 @@ IMPORTANT : In our cas we use a Pléiades images (50cm resolution pixel) et for 
 Before start, you need to have a satellite image in tif format, a label image in the same position than your satellite image (same projection), you also need to have a grid to extract your patchs. You can directly create your own grid from the Qgis tools : "Create Grids", you need to have a grids who fit (at least closesly) to make 224x224 pixels patchs.
 For examples, in our case we use Pléaides images (From Airbus DS) on 50cm resolution format so to make a 224x224 grids patchs we have to founs how much meters we need to put to have a 224 pixels in longueur and largeur so :  224/2 = 112 , so we need to create a grid with 112 meter in longueur and largeur to have a 224x224 patches. 
 
-
-![Label](./Fig/Label.png)
-![Image](./Fig/Image.png)
-
 <div style="display: flex; justify-content: center; align-items: center;">
 
   <figure style="margin: 10px;">
