@@ -4,6 +4,8 @@ This repository provides a simple and reliable tool to perform land cover classi
 
 The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure []).
 
+![Description de l'image](./Fig/Label.png)
+
 Step 1 : Patch extraction 
 
 ## Step 1: Patch Extraction
