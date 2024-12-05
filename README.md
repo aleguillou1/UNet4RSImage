@@ -6,3 +6,8 @@ The method requires as input a .tif image (the number of channels is adjustable)
 
 Step 1 : Patch extraction 
 
+## Step 1: Patch Extraction
+
+The **Patch Extraction** process is explained in detail in the notebook under the section **"Patch Extraction"** (look for the header with this name).
+
+👉 **[Go to the Notebook](./Toolbox/Unet_tutorial.ipynb)** to find this section.
