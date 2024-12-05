@@ -4,10 +4,27 @@ This repository provides a simple and reliable tool to perform land cover classi
 
 The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure []).
 
-IMPORTANT : In our cas we use a Pléiades images (50cm resolution pixel) et for the label we use OCS GE (freely avaible here: https://geoservices.ign.fr/ocsge). This repo aims to propose a modulable approach for differente data (different resolution and labels/Classes). You can use RGB Image or Multi-spectral imagery, you can also choose how much classes you want to predict. For the moment we propose only one U-Net architecture who ask a 224x224xn_channels and labels in 224x224x1 (in bytes, Int8) format as input. 
+IMPORTANT: In this tutorial, we use Pléiades satellite imagery (with a 50 cm per pixel resolution) and OCS GE labels (freely available here). This repository offers a modular approach that can be adapted to different datasets, resolutions, and label classes. Whether you are working with RGB images or multi-spectral imagery, this workflow allows you to customize the number of classes to predict.
 
-Before start, you need to have a satellite image in tif format, a label image in the same position than your satellite image (same projection), you also need to have a grid to extract your patchs. You can directly create your own grid from the Qgis tools : "Create Grids", you need to have a grids who fit (at least closesly) to make 224x224 pixels patchs.
-For examples, in our case we use Pléaides images (From Airbus DS) on 50cm resolution format so to make a 224x224 grids patchs we have to founs how much meters we need to put to have a 224 pixels in longueur and largeur so :  224/2 = 112 , so we need to create a grid with 112 meter in longueur and largeur to have a 224x224 patches. 
+Currently, we provide a single U-Net architecture, which requires:
+
+Input images: 224 x 224 x n_channels (e.g., RGB or multi-spectral images).
+Input labels: 224 x 224 x 1 (byte or Int8 format).
+Prerequisites
+Before getting started, ensure you have the following:
+
+A satellite image: In GeoTIFF format (.tif).
+A label image: With the same extent and projection as the satellite image.
+A grid shapefile: For dividing the images into patches.
+Creating the Grid
+You can generate a grid using QGIS with the "Create Grids" tool. The grid must align closely with the image resolution to produce patches of the desired size (224 x 224 pixels).
+
+For example:
+
+With Pléiades imagery at 50 cm per pixel resolution, a patch of 224 pixels corresponds to 112 meters (since 224 ÷ 2 = 112)
+
+Therefore, you should create a grid with 112 meters as both the width and height to achieve 224 x 224 pixel patches.
+By following this setup, the U-Net model will be able to process the patches efficiently and ensure proper alignment between the images and labels.
 
 
 | ![Image 1](./Fig/Label.png) | ![Image 2](./Fig/Image.png) |
