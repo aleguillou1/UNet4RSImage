@@ -23,6 +23,11 @@ For examples, in our case we use Pléaides images (From Airbus DS) on 50cm resol
 
 </div>
 
+| ![Image 1](./Fig/Label.png) | ![Image 2](./Fig/Image.png) |
+|:--------------------------------:|:--------------------------------:|
+| **Figure 1**: Description 1.     | **Figure 2**: Description 2.     |
+
+
 
 Step 1 : Patch extraction 
 
