@@ -125,6 +125,10 @@ print("Patch extraction complete!")
 
 ```
 
+| ![Image 1](./Fig/label_example.png) | ![Image 2](./Fig/patch_example.png) |
+|:--------------------------------:|:--------------------------------:|
+| **Figure 6**: Label example     | **Figure 7**: Patch example     |
+
 ### Step 2: Image pre-processing
 
 This cells aims to prepare the dataset for the training of the model. The cells will read your dataset, normalize them, transform them as tensor, you can also visualise a dataset to check if you patch and labels are the same for the training.
