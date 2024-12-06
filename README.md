@@ -6,6 +6,16 @@ The method requires as input a .tif image (the number of channels is adjustable)
 
 IMPORTANT: In this tutorial, we use Pléiades satellite imagery (with a 50 cm per pixel resolution) and OCS GE labels (freely available here : https://geoservices.ign.fr/ocsge). This repository offers a modular approach that can be adapted to different datasets, resolutions, and label classes. Whether you are working with RGB images or multi-spectral imagery, this workflow allows you to customize the number of classes to predict.
 
+We downloaded the OCS GE dataset for the area corresponding to our satellite image. We then grouped the classes as follows:
+
+0 for road
+1 for building
+2 for sand
+3 for grass
+4 for forest
+5 for water
+Afterwards, we rasterized this data to create the labels for training.
+
 Currently, we provide a single U-Net architecture, which requires:
 
 Input images: 224 x 224 x n_channels (e.g., RGB or multi-spectral images).
