@@ -684,4 +684,7 @@ The results :
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
 | **Figure 8**: The 224x224 patch from the Pléiades image   | **Figure 9**:  The reference label  | **Figure 10**: The prediction   |
 
-Scores : A
+Last step : Inference on large scale image
+
+---
+
