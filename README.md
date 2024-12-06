@@ -595,9 +595,9 @@ _____________________________________________
 
 Best epoch : Epoch 60: val_loss improved from 0.32535 to 0.30867, saving model to /path/to/your/model
 
-
-
 ```
+
+![Image 10](./Fig/plot.png)
 
 ### Step 4 : Displaying results :
 
