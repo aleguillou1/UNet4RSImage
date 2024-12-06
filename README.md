@@ -16,6 +16,8 @@ We downloaded the OCS GE dataset for the area corresponding to our satellite ima
 - 3 for grass 
 - 4 for forest 
 - 5 for sand
+
+  
 Afterwards, we rasterized this data to create the labels for training.
 
 Currently, we provide a single U-Net architecture, which requires:
