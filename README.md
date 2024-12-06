@@ -33,7 +33,7 @@ By following this setup, the U-Net model will be able to process the patches eff
 
 When you create your grid , its possible that in the border right of your grid the image and the grid is not superpose perfectly , in this case you have to delete the last colums and the last rows of your grid (Figure 3 , 4 ,5)
 
-| ![Image 3](.Fig\Grid.png) | ![Image 4](.\Fig\grid_not_scale.png) | ![Image 5](.\Fig\grid_to_delete.png) |
+| ![Image 3](./Fig/Grid.png) | ![Image 4](./Fig/grid_not_scale.png) | ![Image 5](./Fig/grid_to_delete.png) |
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
 | **Figure 3**: The grid   | **Figure 4**:  No overlay   | **Figure 3**: The part to be deleted   |
 
