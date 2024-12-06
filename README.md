@@ -10,12 +10,12 @@ IMPORTANT: In this tutorial, we use Pléiades satellite imagery (with a 50 cm pe
 
 We downloaded the OCS GE dataset for the area corresponding to our satellite image. We then grouped the classes as follows:
 
-- 0 for road /
-- 1 for building /
-- 2 for water /
-- 3 for grass / 
-- 4 for forest / 
-- 5 for sand /
+- 0 for road 
+- 1 for building 
+- 2 for water 
+- 3 for grass 
+- 4 for forest 
+- 5 for sand
 Afterwards, we rasterized this data to create the labels for training.
 
 Currently, we provide a single U-Net architecture, which requires:
