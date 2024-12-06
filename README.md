@@ -29,7 +29,7 @@ By following this setup, the U-Net model will be able to process the patches eff
 
 | ![Image 1](./Fig/Label.png) | ![Image 2](./Fig/Image.png) |
 |:--------------------------------:|:--------------------------------:|
-| **Figure 1**: Pléiades image     | **Figure 2**: Label from OCS GE     |
+| **Figure 1**: Label from OCS GE     | **Figure 2**: Pléiades Image     |
 
 
 
