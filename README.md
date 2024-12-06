@@ -150,6 +150,8 @@ print("Patch extraction complete!")
 
 ### Step 2: Image pre-processing
 
+---
+
 This cells aims to prepare the dataset for the training of the model. The cells will read your dataset, normalize them, transform them as tensor, you can also visualise a dataset to check if you patch and labels are the same for the training.
 ```python
 
@@ -222,6 +224,8 @@ plt.show()
 ```
 
 ### Step 3: Training of the U-net Model
+
+---
 
 ```python
 
@@ -594,6 +598,8 @@ Best epoch : Epoch 60: val_loss improved from 0.32535 to 0.30867, saving model t
 ```
 
 ### Step 4 : Displaying results :
+
+---
 
 ```python
 
