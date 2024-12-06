@@ -32,6 +32,15 @@ By following this setup, the U-Net model will be able to process the patches eff
 | **Figure 1**: Label from OCS GE     | **Figure 2**: Pléiades Image     |
 
 When you create your grid , its possible that in the border right of your grid the image and the grid is not superpose perfectly , in this case you have to delete the last colums and the last rows of your grid (Figure 3 , 4 ,5)
+Once the grid is created, you will need to use the "Add Autoincrement Field" tool in QGIS to generate a new field with automatic numbering. This numbering will start from 0 and increment sequentially for each patch in the grid. After adding the autoincrement field, use the generated numbers to extract image patches. The following part of the code iterates through each row in the grid and extracts the corresponding image and label patches: 
+
+```python
+for idx, row in grid.iterrows():
+    geom = [row['geometry']]  # Get the geometry for the current patch
+    patch_img, transform = mask(src_img, geom, crop=True)  # Extract image patch
+    patch_lbl, _ = mask(src_lbl, geom, crop=True)  # Extract label patch
+```
+
 
 | ![Image 3](./Fig/Grid.png) | ![Image 4](./Fig/grid_not_scale.png) | ![Image 5](./Fig/grid_to_delete.png) |
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
