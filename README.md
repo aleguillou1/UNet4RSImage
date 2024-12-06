@@ -691,3 +691,14 @@ The results :
 ---
 
 
+If you wish to perform large-scale classification with a satellite image, you can use the "inference" notebook. The steps are as follows:
+
+-  Cell 1 : Place your image (in .tif format) to split it into patches (the larger the overlap you choose, the less visible the artifacts will be, but the longer the processing time will be).
+- Cell 2 : Once you have split your image into patches, the second cell will make predictions for each patch and save them in a new directory.
+- Cell 3 : The final cell uses the GDAL merge tool to combine all the patches in the prediction directory into one large image.
+
+
+| ![Image 3](./Fig/Image.png) | ![Image 4](./Fig/Label.png) | ![Image 5](./Fig/grid_to_delete.png) |
+|:-----------------------------:|:-----------------------------:|:-----------------------------:|
+| **Figure 3**: The image before de prediction   | **Figure 4**:  the label from OCS GE  | **Figure 5**: The final result with the large scale image classification   |
+
