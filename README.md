@@ -38,8 +38,6 @@ When you create your grid , its possible that in the border right of your grid t
 | **Figure 3**: The grid   | **Figure 4**:  No overlay   | **Figure 3**: The part to be deleted   |
 
 
-Step 1 : Patch extraction 
-
 ## Step 1: Patch Extraction
 
 The **Patch Extraction** process is explained in detail in the notebook under the section **"Patch Extraction"** (look for the header with this name).
