@@ -10,10 +10,10 @@ We downloaded the OCS GE dataset for the area corresponding to our satellite ima
 
 0 for road
 1 for building
-2 for sand
+2 for water
 3 for grass
 4 for forest
-5 for water
+5 for sand
 Afterwards, we rasterized this data to create the labels for training.
 
 Currently, we provide a single U-Net architecture, which requires:
@@ -595,6 +595,8 @@ _____________________________________________
 
 Best epoch : Epoch 60: val_loss improved from 0.32535 to 0.30867, saving model to /path/to/your/model
 
+
+
 ```
 
 ### Step 4 : Displaying results :
@@ -681,3 +683,5 @@ The results :
 | ![Image 3](./Fig/Patch_2.png) | ![Image 4](./Fig/label_2.png) | ![Image 5](./Fig/Pre_2.png) |
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
 | **Figure 8**: The 224x224 patch from the Pléiades image   | **Figure 9**:  The reference label  | **Figure 10**: The prediction   |
+
+Scores : A
