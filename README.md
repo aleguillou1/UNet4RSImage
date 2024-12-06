@@ -4,6 +4,8 @@ This repository provides a simple and reliable tool to perform land cover classi
 
 The method requires as input a .tif image (the number of channels is adjustable), its corresponding label in .tif format, and a shapefile grid (Figure 1 & 2)
 
+If you want to try with the data of this tutorial you can download all data from this google drive : https://drive.google.com/drive/folders/12HtGZrBgDsjLLpBF9wwj7KBAhDIocoRa?usp=sharing 
+
 IMPORTANT: In this tutorial, we use Pléiades satellite imagery (with a 50 cm per pixel resolution) and OCS GE labels (freely available here : https://geoservices.ign.fr/ocsge). This repository offers a modular approach that can be adapted to different datasets, resolutions, and label classes. Whether you are working with RGB images or multi-spectral imagery, this workflow allows you to customize the number of classes to predict.
 
 We downloaded the OCS GE dataset for the area corresponding to our satellite image. We then grouped the classes as follows:
