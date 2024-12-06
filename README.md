@@ -65,8 +65,6 @@ The **Patch Extraction** process is explained in detail in the notebook under th
 
 👉 **[Go to the Notebook](./Toolbox/Unet_tutorial.ipynb)** to find this section.
 
-## Step 1: Patch Extraction
-
 To prepare the training, validation, and test datasets for the U-Net model, you need to extract image patches and their corresponding labels. This process divides large geospatial images into smaller, more manageable sections.
 
 ---
