@@ -309,11 +309,27 @@ model = unet_advanced(input_shape, num_classes=num_classes)
 model.summary()
 
 # Define the callback to save the best epoch
-checkpoint_cb = ModelCheckpoint('path/to/your/Model.h5', save_best_only=True, monitor='val_loss', mode='min', verbose=1)
+saved_model_path = "/path/to/your/saved_model"
+checkpoint_cb = ModelCheckpoint(
+    filepath=saved_model_path,  # Path to save the best model
+    monitor='val_loss',
+    mode='min',
+    save_best_only=True,
+    save_format="tf",  # Ensure SavedModel format
+    verbose=1
+)
 
-history = model.fit(train_images, train_masks, batch_size=batch_size, epochs=100, validation_data=(val_images, val_masks), callbacks=[checkpoint_cb])
+# Train the model with the callback
+history = model.fit(
+    train_images,
+    train_masks,
+    batch_size=batch_size,
+    epochs=100,
+    validation_data=(val_images, val_masks),
+    callbacks=[checkpoint_cb]
+)
 
-print("The training is complete, and the best model is saved.")
+print(f"The best model has been saved in SavedModel format at {saved_model_path}.")
 
 # After training, plot the loss and accuracy graphs
 def plot_training_history(history):
@@ -338,13 +354,14 @@ def plot_training_history(history):
     plt.legend()
 
     # Save the plot as a PNG file
-    plt.savefig('path/to/your/training_history.png')
+    plt.savefig('/path/to/your/training_history.png')
     plt.show()
 
 # Call the function to plot and save the training history
 plot_training_history(history)
 
-print("The training is complete, and the best model is saved.")
+print("Training history plot is saved.")
+
 ```
 
 
