@@ -684,7 +684,10 @@ The results :
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
 | **Figure 8**: The 224x224 patch from the Pléiades image   | **Figure 9**:  The reference label  | **Figure 10**: The prediction   |
 
-Last step : Inference on large scale image
+### Last step : Inference on large scale image
+
+👉 **[Go to the Notebook](./Toolbox/Inference.ipynb)** to find this section.
 
 ---
+
 
