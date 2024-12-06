@@ -56,7 +56,7 @@ for idx, row in grid.iterrows():
 
 | ![Image 3](./Fig/Grid.png) | ![Image 4](./Fig/grid_not_scale.png) | ![Image 5](./Fig/grid_to_delete.png) |
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
-| **Figure 3**: The grid   | **Figure 4**:  No overlay   | **Figure 3**: The part to be deleted   |
+| **Figure 3**: The grid   | **Figure 4**:  No overlay   | **Figure 5**: The part to be deleted   |
 
 
 ## Step 1: Patch Extraction
