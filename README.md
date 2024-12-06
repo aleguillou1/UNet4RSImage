@@ -700,5 +700,5 @@ If you wish to perform large-scale classification with a satellite image, you ca
 
 | ![Image 3](./Fig/Image.png) | ![Image 4](./Fig/Label.png) | ![Image 5](./Fig/merged_image.png) |
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
-| **Figure 11**: The image before de prediction   | **Figure 12**:  the label from OCS GE  | **Figure 13**: The final result with the large scale image classification   |
+| **Figure 11**: The image before the prediction   | **Figure 12**:  the label from OCS GE  | **Figure 13**: The final result with the large scale image classification   |
 
