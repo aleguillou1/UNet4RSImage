@@ -5,5 +5,4 @@ matplotlib
 rasterio
 geopandas
 opencv-python
-rasterio
 GDAL
