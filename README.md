@@ -556,3 +556,86 @@ _____________________________________________
 Best epoch : Epoch 60: val_loss improved from 0.32535 to 0.30867, saving model to /path/to/your/model
 
 ```
+
+### Step 4 : Displaying results :
+
+```python
+
+# Normalize the image
+def normalize_img(img):
+    return img / np.max(img)
+
+# Load a test image and keep the geo-referencing information
+def load_test_image(image_path):
+    img = tiff.imread(image_path).astype(np.float32)
+    img = normalize_img(img)
+    img = np.expand_dims(img, axis=0)
+    
+    # Read the geo-referencing info (e.g., transform and CRS)
+    with rasterio.open(image_path) as src:
+        transform = src.transform
+        crs = src.crs
+        
+    return img, transform, crs
+
+# Load a test label
+def load_test_mask(mask_path):
+    mask = tiff.imread(mask_path).astype(np.uint8)
+    return mask
+
+# Paths to the test image and test label
+test_image_path = 'test/images/patch_1.0.tif'  
+test_mask_path = 'test/labels/patch_1.0.tif'
+
+# Load the saved model (SavedModel format)
+saved_model_path = '/path/to/your/saved_model'  # Path to the directory of the SavedModel
+model = tf.keras.models.load_model(saved_model_path)
+
+# Load and prepare the test image and test label
+test_image, transform, crs = load_test_image(test_image_path)
+test_mask = load_test_mask(test_mask_path)
+print(f'Shape of test image: {test_image.shape}')
+print(f'Shape of test mask: {test_mask.shape}')
+
+# Predict the segmentation of the test image
+prediction = model.predict(test_image)
+predicted_mask = tf.argmax(prediction, axis=-1)
+predicted_mask = tf.squeeze(predicted_mask).numpy()
+
+# Save the predicted mask with geo-referencing
+predicted_mask_path = 'example/predicted_mask.tif'  # Replace with the path where you want to save the predicted mask
+
+# Write the predicted mask using rasterio, preserving the geo-referencing
+with rasterio.open(test_image_path) as src:
+    meta = src.meta  # Get the metadata (including the transform)
+    meta.update(driver='GTiff', dtype=rasterio.uint8, count=1)  # Update the metadata to match the predicted mask's data type and single band count
+    
+    # Save the predicted mask as a georeferenced TIFF
+    with rasterio.open(predicted_mask_path, 'w', **meta) as dst:
+        dst.write(predicted_mask, 1)  # Write the predicted mask as the first band
+
+print(f'Predicted mask saved as {predicted_mask_path}')
+
+# Display the test image, the test label, and the predicted mask
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 3, 1)
+plt.imshow(test_image[0][:, :, :3])  
+plt.title('Test Image (RGB)')
+
+plt.subplot(1, 3, 2)
+plt.imshow(test_mask, cmap='gray')
+plt.title('Test Label')
+
+plt.subplot(1, 3, 3)
+plt.imshow(predicted_mask, cmap='gray')
+plt.title('Predicted Mask')
+
+plt.show()
+```
+
+The results : 
+
+| ![Image 3](./Fig/Patch_2.png) | ![Image 4](./Fig/label_2.png) | ![Image 5](./Fig/Pre_2.png) |
+|:-----------------------------:|:-----------------------------:|:-----------------------------:|
+| **Figure 8**: The 224x224 patch from the Pléiades image   | **Figure 9**:  The reference label  | **Figure 10**: The prediction   |
